@@ -29,8 +29,11 @@ $button-background : #1E37D2;
   width: 90%;
   text-decoration: none;
   background-position: center;
-  @include tablet {
-    width: 100%;
-    height: 280px;
-  }
+    @include tablet {
+      width: 100%;
+      height: 280px;
+    }
+    @include desktop(){
+      height: 380px;
+    }
 }

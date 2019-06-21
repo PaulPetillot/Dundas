@@ -37,6 +37,12 @@ header {
 
         }
 
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: ". . . . . . . .";
+        }
+
         .center-header {
             margin-top: 10px;
             justify-self: center;
@@ -48,6 +54,13 @@ header {
                 margin-top: 20px;
             }
 
+            @include desktop {
+                grid-column: 4 / 6;
+
+            }
+
+            ;
+
             img {
                 margin-left: 25px;
                 margin-bottom: 15px;
@@ -56,6 +69,12 @@ header {
                     margin-left: 40px;
                     margin-right: 40px;
                     width: 90px;
+                }
+
+                @include desktop {
+                    margin-left: 80px;
+                    margin-right: 70px;
+                    width: 100px;
                 }
             }
 
@@ -68,6 +87,7 @@ header {
                     margin-top: 5px;
                     font-size: 10px;
                 }
+
             }
 
 
@@ -87,6 +107,10 @@ header {
                 justify-content: space-between;
             }
 
+            @include desktop {
+                grid-column: 8 / 9;
+            }
+
             #profile-logo {
                 background-color: black;
                 border-radius: 100%;
@@ -99,6 +123,11 @@ header {
                     border-radius: unset;
                     width: 10px;
                     margin-top: 20px;
+                }
+
+                @include desktop {
+                    justify-self: end;
+                    margin-left: 20px;
                 }
             }
 
@@ -144,6 +173,10 @@ header {
         padding-top: 50px;
     }
 
+    @include desktop {
+        height: 650px;
+    }
+
     h5 {
         padding-top: 90px;
         margin-bottom: -20px;
@@ -155,6 +188,11 @@ header {
             font-size: 14px;
             margin-bottom: -30px;
         }
+
+        @include desktop {
+            padding-top: 180px;
+            margin-bottom: -20px;
+        }
     }
 
     h1 {
@@ -165,6 +203,11 @@ header {
         @include tablet {
             font-size: 40px;
             letter-spacing: 3px;
+        }
+
+        @include desktop {
+            font-size: 45px;
+            letter-spacing: 4px;
         }
     }
 
@@ -180,6 +223,7 @@ header {
         @include tablet {
             width: 160px;
         }
+
 
         a {
             color: white;
@@ -226,6 +270,11 @@ header {
         margin-top: 30px;
     }
 
+    @include desktop {
+        width: 80%;
+        margin-top: 40px;
+    }
+
     #classic {
         background-image: url('../assets/images/Classic.jpg');
         @extend %background;
@@ -241,6 +290,10 @@ header {
             @include tablet {
                 margin-top: 240px;
                 font-size: 10px;
+            }
+
+            @include desktop {
+                margin-top: 340px;
             }
         }
     }
@@ -260,6 +313,10 @@ header {
             @include tablet {
                 margin-top: 240px;
                 font-size: 10px;
+            }
+
+            @include desktop {
+                margin-top: 340px;
             }
         }
     }
@@ -283,11 +340,15 @@ header {
             @extend %italic;
             font-size: 12px;
             margin-top: 330px;
-            color: rgb(192, 191, 191);
+            color: rgb(185, 184, 184);
 
             @include tablet {
                 margin-top: 220px;
                 font-size: 8px;
+            }
+
+            @include desktop {
+                margin-top: 320px;
             }
         }
 
@@ -300,7 +361,6 @@ header {
                 margin-top: 10px;
             }
 
-            ;
         }
     }
 }
@@ -318,7 +378,6 @@ header {
         img {
             width: 12px;
             margin-bottom: 10px;
-
         }
 
         .author {
@@ -326,12 +385,14 @@ header {
             font-size: 10px;
         }
 
-        @include tablet {
-            .quote {
+        .quote {
+            @include tablet {
                 width: 60%;
                 margin: auto;
             }
         }
+
+
     }
 
 }
@@ -348,7 +409,10 @@ header {
 
     @include tablet {
         width: 85%;
+    }
 
+    @include desktop {
+        width: 75%;
     }
 
     .quality-div {
@@ -386,9 +450,9 @@ header {
 
     .button {
         border: 2px solid $button-background;
-        width: 130px;
+        width: 128px;
         height: 28px;
-        padding-top: 4px;
+        padding-top: 3px;
         margin-left: auto;
         margin-right: auto;
         margin-top: -5px;
@@ -437,9 +501,12 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: black;
-
+    @include desktop{
+        text-align: left;
+    }
     p {
         font-size: 14px;
+        @extend %italic;
     }
 
     a {
@@ -461,12 +528,65 @@ footer {
     section {
         a {
             margin-left: 10px;
+
+            @include tablet {
+                margin-left: 0;
+            }
+        }
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: ". . ."". . .";
+
+            .footer-section {
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        margin-top: 7px;
+                    }
+                }
+                @include desktop{
+                    margin-left: 50px;
+                }
+            }
+
+            #form-section {
+                grid-column: 1/4;
+                margin-top: 10px;
+            }
+        }
+
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: ". . . . . .";
+            padding-top: 80px;
+            padding-bottom: 100px;
+            #first-section{
+                grid-column: 1/2;
+            }
+            #second-section{
+                grid-column: 2/3;
+            }
+            #third-section{
+                grid-column: 3/4;
+            }
+            #form-section{
+                grid-column: 5/7;
+            }
         }
 
     }
 
     .form-title {
         margin-top: 30px;
+        @include desktop{
+            margin-top: 10px;
+        }
     }
 
     form {
@@ -494,6 +614,13 @@ footer {
             border-left: 0;
             border-right: 0;
             padding-bottom: 1px;
+        }
+    }
+
+    .bottom-footer {
+        @include tablet {
+            display: flex;
+            justify-content: space-around;
         }
     }
 }

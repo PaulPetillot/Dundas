@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./scss/style.scss";
 import logo from "./assets/images/Logo.svg";
 import basket from "./assets/images/basket.svg";
@@ -9,7 +9,13 @@ import classicCut from "./assets/images/classic-cut.jpg";
 import sustainable from "./assets/images/Sustainable.jpg";
 
 const App = () => {
-  
+  const [input, setInput] = useState("");
+  const onSubmit = e => {
+    e.preventDefault();
+    input.length
+      ? alert("Thanks for Subscribing !")
+      : alert("Please enter your Email.");
+  };
   return (
     <Fragment>
       <header>
@@ -17,103 +23,119 @@ const App = () => {
           <div className="center-header">
             <a href="/shop">Shop</a>
             <img src={logo} alt="Dundas\'s logo" />
-           <a href="/discover">Discover</a>
+            <a href="/discover">Discover</a>
           </div>
           <div className="left-header">
-            <img id='profile-logo' src={profile} alt="profile logo" /> 
-            <div id="cart-div"><img id='basket-logo' src={basket} alt="basket logo" /></div>     
-            
+            <img id="profile-logo" src={profile} alt="profile logo" />
+            <div id="cart-div">
+              <img id="basket-logo" src={basket} alt="basket logo" />
+            </div>
           </div>
         </nav>
       </header>
 
       <main>
-      <article>
-        <section className="hero-banner">
-          <h5>100% Sustainably Sourced Linen</h5>
-          <h1>for the love of linen</h1>
-          <div className='button'>
-          <a href="https://yyt.dev/">discover</a>
-          </div>
-        </section>
+        <article>
+          <section className="hero-banner">
+            <h5>100% Sustainably Sourced Linen</h5>
+            <h1>for the love of linen</h1>
+            <div className="button">
+              <a href="https://yyt.dev/">discover</a>
+            </div>
+          </section>
 
-        <section className="categories">
-          <a id='classic' href="/classic">
-            <p>classic</p>
-          </a>
+          <section className="categories">
+            <a id="classic" href="/classic">
+              <p>classic</p>
+            </a>
 
-          <a id='safari' href="/safari">
-            <p>safari</p>
-          </a>
+            <a id="safari" href="/safari">
+              <p>safari</p>
+            </a>
 
-          <a href="/mandarin" id="mandarin">
-            <p id="italic-mandarin">Shop</p>
-            <p id="black-mandarin">mandarin</p>
-          </a>
-        </section>
+            <a href="/mandarin" id="mandarin">
+              <p id="italic-mandarin">Shop</p>
+              <p id="black-mandarin">mandarin</p>
+            </a>
+          </section>
 
-        <div className="border"/>
+          <div className="border" />
 
-        <section className="carousel" data-flickity='{ "autoPlay": true, "groupCells": true  }'>
-          <div className="carousel-cell">
-          <img src={quote} alt="quote" />
-            <p className="italic quote">As a man who wears Linen all
-              year round Dundas London shirts are a staple in my wardrobe, 
-              crisply ironed or pulled out of a rucksack they wear well.
-            </p>
-            <p className="author">Robbie Honey — Author and Botanical Adventurer</p>
-          </div>
+          <section
+            className="carousel"
+            data-flickity='{ "autoPlay": true, "groupCells": true  }'
+          >
+            <div className="carousel-cell">
+              <img src={quote} alt="quote" />
+              <p className="italic quote">
+                As a man who wears Linen all year round Dundas London shirts are
+                a staple in my wardrobe, crisply ironed or pulled out of a
+                rucksack they wear well.
+              </p>
+              <p className="author">
+                Robbie Honey — Author and Botanical Adventurer
+              </p>
+            </div>
 
-          <div className="carousel-cell">
-            <img src={quote} alt="quote" />
-            <p className="italic quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-             Vestibulum id ligula porta felis euismod semper.
-            </p>
-            <p className="author">Robbie Honey — Author and Botanical Adventurer</p>
-          </div>
-        </section>
+            <div className="carousel-cell">
+              <img src={quote} alt="quote" />
+              <p className="italic quote">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum id ligula porta felis euismod semper.
+              </p>
+              <p className="author">
+                Robbie Honey — Author and Botanical Adventurer
+              </p>
+            </div>
+          </section>
 
-        <div className="border"/>
+          <div className="border" />
 
-        <section className="quality">
-              <div className="quality-div">
-                <div>
-                <img src={bestLinen} alt="best linen"/>
+          <section className="quality">
+            <div className="quality-div">
+              <div>
+                <img src={bestLinen} alt="best linen" />
                 <p className="italic">Best Linen</p>
-                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vestibulum id ligula porta felis euismod semper.
                 </p>
               </div>
 
-              <div className='single-qual'>
-                <img src={classicCut} alt="best linen"/>
+              <div className="single-qual">
+                <img src={classicCut} alt="best linen" />
                 <p className="italic">Classic Cut</p>
-                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vestibulum id ligula porta felis euismod semper.
                 </p>
               </div>
 
-              <div className='single-qual'>
-                <img src={sustainable} alt="best linen"/>
+              <div className="single-qual">
+                <img src={sustainable} alt="best linen" />
                 <p className="italic">Sustainable</p>
-                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vestibulum id ligula porta felis euismod semper.
                 </p>
               </div>
-              </div>
-              <div className="button"> <a href="/shop">shop</a></div>
-             
-        </section>
-      </article>
-      <div className="border"/>
-        <p className="italic" id="alone">Free Delivery on all UK Mainland Orders</p>
+            </div>
+            <div className="button">
+              {" "}
+              <a href="/shop">shop</a>
+            </div>
+          </section>
+        </article>
+        <div className="border" />
+        <p className="italic" id="alone">
+          Free Delivery on all UK Mainland Orders
+        </p>
       </main>
 
       <footer>
         <section>
-
-          <div>
-            <p className='footer-title'>Shop</p>
+          <div id="first-section" className="footer-section">
+            <p className="footer-title">Shop</p>
             <div>
               <a href="/classic">Classic</a>
               <a href="/safari">Safari</a>
@@ -121,8 +143,19 @@ const App = () => {
             </div>
           </div>
 
-          <div>
-              <p className='footer-title'>Help</p>
+          <div id="second-section" className="footer-section">
+            <p className="footer-title">Dundas</p>
+            <div>
+              <a href="/our-story">Our Story</a>
+              <a href="/news">News</a>
+              <a href="/discover">Discover</a>
+              <a href="/partnerships">Partnerships</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </div>
+
+          <div id="third-section" className="footer-section">
+            <p className="footer-title">Help</p>
             <div>
               <a href="/tc">T&C's</a>
               <a href="/return">Returns & Exchange</a>
@@ -132,26 +165,33 @@ const App = () => {
             </div>
           </div>
 
-          <div>
-            <p className="italic form-title">Sign up for all the latest news & offers</p>
-            <form>
-             <input placeholder='Your Email Adress'/>
-             <button>></button>
+          <div id="form-section">
+            <p className="italic form-title">
+              Sign up for all the latest news & offers
+            </p>
+            <form onSubmit={e => onSubmit(e)}>
+              <input
+                type="email"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                placeholder="Your Email Adress"
+              />
+              <button>></button>
             </form>
             <div>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-facebook"></i>
+              <i className="fab fa-instagram" />
+              <i className="fab fa-twitter" />
+              <i className="fab fa-facebook" />
             </div>
           </div>
         </section>
         <div className="bottom-footer">
           <p>©2019, Dundas London</p>
-          <div className="payments"> 
-            <i className="fab fa-cc-mastercard"></i>
-            <i className="fab fa-cc-visa"></i>
-            <i className="fab fa-cc-paypal"></i>
-            <i className="fab fa-cc-amex"></i>
+          <div className="payments">
+            <i className="fab fa-cc-mastercard" />
+            <i className="fab fa-cc-visa" />
+            <i className="fab fa-cc-paypal" />
+            <i className="fab fa-cc-amex" />
           </div>
         </div>
       </footer>
