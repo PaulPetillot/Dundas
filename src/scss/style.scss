@@ -127,7 +127,7 @@ header {
 
                 @include desktop {
                     justify-self: end;
-                    margin-left: 20px;
+                    margin-left: 35px;
                 }
             }
 
@@ -162,7 +162,7 @@ header {
     background-image: url('../assets/images/hero-banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 450px;
+    height: 590px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -501,9 +501,11 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: black;
-    @include desktop{
+
+    @include desktop {
         text-align: left;
     }
+
     p {
         font-size: 14px;
         @extend %italic;
@@ -521,6 +523,23 @@ footer {
         font-size: 20px;
     }
 
+    .is {
+        @include desktop {
+            margin-left: 0;
+            font-size: 16px;
+            color: rgb(145, 142, 142);
+
+        }
+    }
+
+    .fa-twitter,
+    .fa-facebook {
+        @include desktop {
+            margin-left: 20px;
+        }
+    }
+
+
     .footer-title {
         font-size: 18px;
     }
@@ -528,12 +547,10 @@ footer {
     section {
         a {
             margin-left: 10px;
-
-            @include tablet {
-                margin-left: 0;
-            }
+            
+                color : grey;
+            
         }
-
         @include tablet {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -547,9 +564,11 @@ footer {
 
                     a {
                         margin-top: 7px;
+                         margin-left: 0;
                     }
                 }
-                @include desktop{
+
+                @include desktop {
                     margin-left: 50px;
                 }
             }
@@ -566,16 +585,22 @@ footer {
             grid-template-areas: ". . . . . .";
             padding-top: 80px;
             padding-bottom: 100px;
-            #first-section{
+            border-bottom : 1px solid rgba(100, 100, 100, 0.4);
+            width: 92%;
+            margin : auto;
+            #first-section {
                 grid-column: 1/2;
             }
-            #second-section{
+
+            #second-section {
                 grid-column: 2/3;
             }
-            #third-section{
+
+            #third-section {
                 grid-column: 3/4;
             }
-            #form-section{
+
+            #form-section {
                 grid-column: 5/7;
             }
         }
@@ -584,43 +609,80 @@ footer {
 
     .form-title {
         margin-top: 30px;
-        @include desktop{
+
+        @include desktop {
             margin-top: 10px;
         }
     }
 
     form {
+        @include desktop {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         input {
             background-color: black;
             border-bottom: 1px solid rgb(187, 185, 185);
             border-top: 0;
             border-left: 0;
             border-right: 0;
+            border-radius : 0;
 
             &::placeholder {
-                color: white;
+                color: rgb(177, 177, 177);
+                letter-spacing: 1px;
+
+                @include desktop {
+                    font-size: 13px;
+                }
+
             }
 
             &:focus {
                 color: white;
             }
+
+            @include desktop {
+                width: 300px;
+                height: 30px;
+            }
         }
 
         button {
-            background-color: black;
-            color: white;
-            border-bottom: 1px solid rgb(187, 185, 185);
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-            padding-bottom: 1px;
+            background-color: transparent;
+            color: rgb(177, 177, 177);
+            border : 0;
+            margin-left: -25px;
         }
     }
 
     .bottom-footer {
+        p{
+            font-style: normal;
+            font-family: $main-font;
+            color : grey;
+        }
         @include tablet {
             display: flex;
             justify-content: space-around;
         }
+        @include desktop{
+            justify-content: space-between;
+            p{
+                margin-left: 4%;
+                margin-top: 35px;
+            }
+            .payments{
+                margin-top: 28px;
+                margin-right: 4%;
+                i{
+                    color : grey;
+                    font-size: 22px;
+                    margin: 3px;
+                }
+            }
+        }
+        
     }
 }

@@ -7,8 +7,10 @@ import quote from "./assets/images/quote.svg";
 import bestLinen from "./assets/images/best-linen.jpg";
 import classicCut from "./assets/images/classic-cut.jpg";
 import sustainable from "./assets/images/Sustainable.jpg";
+import SingleQuality from './components/SingleQuality';
 
 const App = () => {
+  
   const [input, setInput] = useState("");
   const onSubmit = e => {
     e.preventDefault();
@@ -16,6 +18,7 @@ const App = () => {
       ? alert("Thanks for Subscribing !")
       : alert("Please enter your Email.");
   };
+
   return (
     <Fragment>
       <header>
@@ -93,32 +96,22 @@ const App = () => {
 
           <section className="quality">
             <div className="quality-div">
-              <div>
-                <img src={bestLinen} alt="best linen" />
-                <p className="italic">Best Linen</p>
-                <p className="description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum id ligula porta felis euismod semper.
-                </p>
-              </div>
+            
+            <SingleQuality image={bestLinen} title={'Best Linen'} 
+            description={`Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vestibulum
+            id ligula porta felis euismod semper.`} />
 
-              <div className="single-qual">
-                <img src={classicCut} alt="best linen" />
-                <p className="italic">Classic Cut</p>
-                <p className="description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum id ligula porta felis euismod semper.
-                </p>
-              </div>
+            <SingleQuality image={classicCut} title={'Classic Cut'} 
+            description={`Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vestibulum
+            id ligula porta felis euismod semper.`} />
 
-              <div className="single-qual">
-                <img src={sustainable} alt="best linen" />
-                <p className="italic">Sustainable</p>
-                <p className="description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum id ligula porta felis euismod semper.
-                </p>
-              </div>
+            <SingleQuality image={sustainable} title={'Sustainable'} 
+            description={`Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vestibulum
+            id ligula porta felis euismod semper.`} />
+
             </div>
             <div className="button">
               {" "}
@@ -179,9 +172,9 @@ const App = () => {
               <button>></button>
             </form>
             <div>
-              <i className="fab fa-instagram" />
-              <i className="fab fa-twitter" />
-              <i className="fab fa-facebook" />
+              <i className="fab is fa-instagram" />
+              <i className="fab is fa-twitter" />
+              <i className="fab is fa-facebook" />
             </div>
           </div>
         </section>
