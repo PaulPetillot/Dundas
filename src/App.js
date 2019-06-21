@@ -1,26 +1,162 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import "./scss/style.scss";
+import logo from "./assets/images/Logo.svg";
+import basket from "./assets/images/basket.svg";
+import profile from "./assets/images/profile.svg";
+import quote from "./assets/images/quote.svg";
+import bestLinen from "./assets/images/best-linen.jpg";
+import classicCut from "./assets/images/classic-cut.jpg";
+import sustainable from "./assets/images/Sustainable.jpg";
 
-function App() {
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Fragment>
+      <header>
+        <nav>
+          <div className="center-header">
+            <a href="/shop">Shop</a>
+            <img src={logo} alt="Dundas\'s logo" />
+           <a href="/discover">Discover</a>
+          </div>
+          <div className="left-header">
+            <img id='profile-logo' src={profile} alt="profile logo" /> 
+            <div id="cart-div"><img id='basket-logo' src={basket} alt="basket logo" /></div>     
+            
+          </div>
+        </nav>
       </header>
-    </div>
+
+      <main>
+      <article>
+        <section className="hero-banner">
+          <h5>100% Sustainably Sourced Linen</h5>
+          <h1>for the love of linen</h1>
+          <div className='button'>
+          <a href="https://yyt.dev/">discover</a>
+          </div>
+        </section>
+
+        <section className="categories">
+          <a id='classic' href="/classic">
+            <p>classic</p>
+          </a>
+
+          <a id='safari' href="/safari">
+            <p>safari</p>
+          </a>
+
+          <a href="/mandarin" id="mandarin">
+            <p id="italic-mandarin">Shop</p>
+            <p id="black-mandarin">mandarin</p>
+          </a>
+        </section>
+
+        <div className="border"/>
+
+        <section className="carousel" data-flickity='{ "autoPlay": true, "groupCells": true  }'>
+          <div className="carousel-cell">
+          <img src={quote} alt="quote" />
+            <p className="italic quote">As a man who wears Linen all
+              year round Dundas London shirts are a staple in my wardrobe, 
+              crisply ironed or pulled out of a rucksack they wear well.
+            </p>
+            <p className="author">Robbie Honey — Author and Botanical Adventurer</p>
+          </div>
+
+          <div className="carousel-cell">
+            <img src={quote} alt="quote" />
+            <p className="italic quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Vestibulum id ligula porta felis euismod semper.
+            </p>
+            <p className="author">Robbie Honey — Author and Botanical Adventurer</p>
+          </div>
+        </section>
+
+        <div className="border"/>
+
+        <section className="quality">
+              <div className="quality-div">
+                <div>
+                <img src={bestLinen} alt="best linen"/>
+                <p className="italic">Best Linen</p>
+                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id ligula porta felis euismod semper.
+                </p>
+              </div>
+
+              <div className='single-qual'>
+                <img src={classicCut} alt="best linen"/>
+                <p className="italic">Classic Cut</p>
+                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id ligula porta felis euismod semper.
+                </p>
+              </div>
+
+              <div className='single-qual'>
+                <img src={sustainable} alt="best linen"/>
+                <p className="italic">Sustainable</p>
+                <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum id ligula porta felis euismod semper.
+                </p>
+              </div>
+              </div>
+              <div className="button"> <a href="/shop">shop</a></div>
+             
+        </section>
+      </article>
+      <div className="border"/>
+        <p className="italic" id="alone">Free Delivery on all UK Mainland Orders</p>
+      </main>
+
+      <footer>
+        <section>
+
+          <div>
+            <p className='footer-title'>Shop</p>
+            <div>
+              <a href="/classic">Classic</a>
+              <a href="/safari">Safari</a>
+              <a href="/mandarin">Mandarin</a>
+            </div>
+          </div>
+
+          <div>
+              <p className='footer-title'>Help</p>
+            <div>
+              <a href="/tc">T&C's</a>
+              <a href="/return">Returns & Exchange</a>
+              <a href="/delivery">Delivery</a>
+              <a href="/care">Care & Cleaning</a>
+              <a href="/privacy">Privacy policy</a>
+            </div>
+          </div>
+
+          <div>
+            <p className="italic form-title">Sign up for all the latest news & offers</p>
+            <form>
+             <input placeholder='Your Email Adress'/>
+             <button>></button>
+            </form>
+            <div>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-facebook"></i>
+            </div>
+          </div>
+        </section>
+        <div className="bottom-footer">
+          <p>©2019, Dundas London</p>
+          <div className="payments"> 
+            <i className="fab fa-cc-mastercard"></i>
+            <i className="fab fa-cc-visa"></i>
+            <i className="fab fa-cc-paypal"></i>
+            <i className="fab fa-cc-amex"></i>
+          </div>
+        </div>
+      </footer>
+    </Fragment>
   );
-}
+};
 
 export default App;

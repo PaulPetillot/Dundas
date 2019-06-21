@@ -1,0 +1,36 @@
+$main-font : 'Gotham';
+$desktop-width : 1040px;
+$tablet-width : 624px;
+$button-background : #1E37D2;
+
+%italic {
+  font-family: 'Calendas Plus';
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+%background {
+  align-self: center;
+  justify-self: center;
+  background-size: cover;
+  height: 380px;
+  width: 90%;
+  text-decoration: none;
+  background-position: center;
+  @include tablet {
+    width: 100%;
+    height: 280px;
+  }
+}
